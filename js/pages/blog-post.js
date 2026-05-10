@@ -3,6 +3,14 @@ import { el, setHTML } from '../utils/dom.js';
 import { formatDate } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
 
+function renderBody(text) {
+  if (!text) return '';
+  return text
+    .split(/\n\n+/)
+    .map((para) => `<p>${escapeHTML(para.trim()).replace(/\n/g, '<br>')}</p>`)
+    .join('');
+}
+
 async function init() {
   const container = el('#blog-post-content');
   if (!container) return;
@@ -28,7 +36,7 @@ async function init() {
         <span>${formatDate(post.published_at)}</span>
       </div>
       <h1 class="blog-post-title">${escapeHTML(post.title)}</h1>
-      <div class="blog-post-body">${post.body ?? ''}</div>
+      <div class="blog-post-body">${renderBody(post.body)}</div>
       <div class="blog-post-back">
         <a href="/blog.html">&larr; Back to Blog</a>
       </div>
