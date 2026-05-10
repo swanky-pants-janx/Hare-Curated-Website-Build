@@ -1,4 +1,5 @@
 import { resolvePitchDeck, saveInquiry } from '../services/quote.service.js';
+import { initNav } from '../components/nav.js';
 import { el, on, showError, clearError, setHTML } from '../utils/dom.js';
 import { isValidEmail, escapeHTML } from '../utils/sanitize.js';
 
@@ -192,6 +193,7 @@ function showResult(deck) {
 }
 
 function init() {
+  initNav();
   renderProgress();
   renderCurrentStep();
   on(el('#quote-contact-form'), 'submit', handleContactSubmit);

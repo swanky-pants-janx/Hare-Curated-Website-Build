@@ -1,9 +1,12 @@
 import { getPublishedBlogs } from '../services/blog.service.js';
+import { initNav } from '../components/nav.js';
 import { el, setHTML } from '../utils/dom.js';
 import { formatDate } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
 
 async function init() {
+  await initNav();
+
   const grid = el('#blog-grid');
   if (!grid) return;
 

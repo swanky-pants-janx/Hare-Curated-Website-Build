@@ -1,13 +1,26 @@
 import { supabase } from '../lib/supabase-client.js';
 
-export async function getVisibleProducts() {
-  const { data, error } = await supabase
+export async function getVisibleProducts(category = null) {
+  let query = supabase
     .from('products')
     .select('id, name, slug, description, price_from, category, cover_image_url')
     .eq('visible', true)
     .order('created_at', { ascending: false });
+  if (category) query = query.eq('category', category);
+  const { data, error } = await query;
   if (error) throw error;
   return data;
+}
+
+export async function getProductCategories() {
+  const { data, error } = await supabase
+    .from('products')
+    .select('category')
+    .eq('visible', true)
+    .not('category', 'is', null);
+  if (error) throw error;
+  const unique = [...new Set(data.map((r) => r.category).filter(Boolean))].sort();
+  return unique;
 }
 
 export async function getProductBySlug(slug) {

@@ -1,9 +1,11 @@
 import { getProductBySlug } from '../services/product.service.js';
+import { initNav } from '../components/nav.js';
 import { el, setHTML } from '../utils/dom.js';
 import { formatPrice } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
 
 async function init() {
+  initNav();
   const container = el('#product-detail-content');
   if (!container) return;
 

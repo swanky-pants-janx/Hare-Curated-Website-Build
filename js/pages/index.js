@@ -1,5 +1,6 @@
 import { getActiveBanners } from '../services/banner.service.js';
 import { getVisibleProducts } from '../services/product.service.js';
+import { initNav } from '../components/nav.js';
 import { el, setHTML } from '../utils/dom.js';
 import { formatPrice } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
@@ -56,5 +57,6 @@ async function loadFeaturedProducts() {
   }
 }
 
+initNav();
 loadBanner();
 loadFeaturedProducts();

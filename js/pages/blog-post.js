@@ -1,4 +1,5 @@
 import { getBlogBySlug } from '../services/blog.service.js';
+import { initNav } from '../components/nav.js';
 import { el, setHTML } from '../utils/dom.js';
 import { formatDate } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
@@ -12,6 +13,8 @@ function renderBody(text) {
 }
 
 async function init() {
+  initNav();
+
   const container = el('#blog-post-content');
   if (!container) return;
 
