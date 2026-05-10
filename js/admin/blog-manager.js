@@ -79,7 +79,6 @@ export async function initBlogManager() {
   on(el('#blog-image-file'), 'change', handleImagePreview);
   on(el('#blog-form'), 'submit', handleSubmit);
 
-  initQuill();
   await loadList();
 }
 
@@ -134,6 +133,7 @@ function openForm(id = null) {
   el('#blog-form-wrapper').style.display = 'block';
   el('#blog-list').style.display = 'none';
   el('#blog-new-btn').style.display = 'none';
+  initQuill();
 
   if (id) {
     const post = blogs.find((b) => b.id === id);
