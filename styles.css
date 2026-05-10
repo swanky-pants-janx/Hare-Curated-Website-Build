@@ -57,7 +57,7 @@ ul { list-style: none; }
 
 /* --- ANNOUNCEMENT BANNER ----------------------------------- */
 .website-banner {
-  display: flex;
+  display: none; /* shown by JS only when an active banner exists */
   align-items: center;
   justify-content: center;
   min-height: 36px;
@@ -69,6 +69,10 @@ ul { list-style: none; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0 var(--gutter);
+}
+
+.website-banner.is-active {
+  display: flex;
 }
 
 /* --- HEADER ------------------------------------------------ */

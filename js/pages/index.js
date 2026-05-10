@@ -1,33 +1,8 @@
-import { getActiveBanners } from '../services/banner.service.js';
 import { getVisibleProducts } from '../services/product.service.js';
 import { initNav } from '../components/nav.js';
 import { el, setHTML } from '../utils/dom.js';
 import { formatPrice } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
-
-async function loadBanner() {
-  const bannerEl = el('#site-banner');
-  if (!bannerEl) return;
-
-  try {
-    const banners = await getActiveBanners();
-    if (!banners.length) {
-      bannerEl.style.display = 'none';
-      return;
-    }
-    // Show the first active banner (sort_order determines priority).
-    const b = banners[0];
-    setHTML(bannerEl, `
-      <p>${escapeHTML(b.text ?? '')}</p>
-      ${b.button_label
-        ? `<a href="${escapeHTML(b.button_url ?? '#')}">${escapeHTML(b.button_label)}</a>`
-        : ''}
-    `);
-  } catch (err) {
-    bannerEl.style.display = 'none';
-    console.error(err);
-  }
-}
 
 async function loadFeaturedProducts() {
   const grid    = el('#featured-products');
@@ -63,5 +38,4 @@ async function loadFeaturedProducts() {
 }
 
 initNav();
-loadBanner();
 loadFeaturedProducts();
