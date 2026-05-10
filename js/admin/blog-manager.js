@@ -9,6 +9,66 @@ import { formatDate } from '../utils/format.js';
 
 let blogs = [];
 let editingId = null;
+let quill = null;
+
+function initQuill() {
+  if (quill) return;
+
+  const toolbarOptions = [
+    [{ header: [1, 2, 3, false] }],
+    [{ size: ['small', false, 'large', 'huge'] }],
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ color: [] }, { background: [] }],
+    [{ align: [] }],
+    [{ list: 'ordered' }, { list: 'bullet' }],
+    ['blockquote', 'code-block'],
+    ['link', 'image'],
+    [{ indent: '-1' }, { indent: '+1' }],
+    [{ script: 'sub' }, { script: 'super' }],
+    ['table-insert'],
+    ['clean'],
+  ];
+
+  quill = new Quill('#blog-body-editor', {
+    theme: 'snow',
+    modules: {
+      toolbar: {
+        container: toolbarOptions,
+        handlers: {
+          'table-insert': insertTable,
+        },
+      },
+    },
+    placeholder: 'Write your blog post here…',
+  });
+
+  // Style the custom table button
+  const tableBtn = document.querySelector('.ql-table-insert');
+  if (tableBtn) {
+    tableBtn.innerHTML = '&#x229E; Table';
+    tableBtn.title = 'Insert Table';
+  }
+}
+
+function insertTable() {
+  const rows = parseInt(prompt('Number of rows:', '3'), 10);
+  const cols = parseInt(prompt('Number of columns:', '3'), 10);
+  if (!rows || !cols || rows < 1 || cols < 1) return;
+
+  let html = '<table border="1" style="border-collapse:collapse;width:100%;margin:8px 0;">';
+  for (let r = 0; r < rows; r++) {
+    html += '<tr>';
+    for (let c = 0; c < cols; c++) {
+      const cell = r === 0 ? 'th' : 'td';
+      html += `<${cell} style="border:1px solid #ccc;padding:6px 10px;">&nbsp;</${cell}>`;
+    }
+    html += '</tr>';
+  }
+  html += '</table><p><br></p>';
+
+  const range = quill.getSelection(true);
+  quill.clipboard.dangerouslyPasteHTML(range.index, html);
+}
 
 export async function initBlogManager() {
   on(el('#blog-new-btn'), 'click', () => openForm());
@@ -19,6 +79,7 @@ export async function initBlogManager() {
   on(el('#blog-image-file'), 'change', handleImagePreview);
   on(el('#blog-form'), 'submit', handleSubmit);
 
+  initQuill();
   await loadList();
 }
 
@@ -81,7 +142,7 @@ function openForm(id = null) {
     el('#blog-title').value = post.title;
     el('#blog-slug').value = post.slug;
     el('#blog-excerpt').value = post.excerpt ?? '';
-    el('#blog-body').value = post.body ?? '';
+    quill.clipboard.dangerouslyPasteHTML(post.body ?? '');
     el('#blog-image-url').value = post.cover_image_url ?? '';
     el('#blog-image-preview').innerHTML = post.cover_image_url
       ? `<img src="${post.cover_image_url}" alt="Cover">`
@@ -89,6 +150,7 @@ function openForm(id = null) {
   } else {
     el('#blog-form-title').textContent = 'New Post';
     el('#blog-form').reset();
+    quill.setContents([]);
     el('#blog-image-preview').innerHTML = '';
     el('#blog-image-url').value = '';
   }
@@ -118,7 +180,7 @@ async function handleSubmit(e) {
   const title = el('#blog-title').value.trim();
   const slug = el('#blog-slug').value.trim();
   const excerpt = clamp(el('#blog-excerpt').value.trim(), 300);
-  const body = el('#blog-body').value.trim();
+  const body = quill.root.innerHTML.trim() === '<p><br></p>' ? '' : quill.root.innerHTML.trim();
   const imageFile = el('#blog-image-file').files[0];
   let cover_image_url = el('#blog-image-url').value;
 

@@ -4,9 +4,12 @@ import { el, setHTML } from '../utils/dom.js';
 import { formatDate } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
 
-function renderBody(text) {
-  if (!text) return '';
-  return text
+function renderBody(body) {
+  if (!body) return '';
+  // If the content looks like HTML (from the rich text editor), render it directly.
+  // Otherwise fall back to plain-text paragraph wrapping for legacy posts.
+  if (/<[a-z][\s\S]*>/i.test(body)) return body;
+  return body
     .split(/\n\n+/)
     .map((para) => `<p>${escapeHTML(para.trim()).replace(/\n/g, '<br>')}</p>`)
     .join('');
