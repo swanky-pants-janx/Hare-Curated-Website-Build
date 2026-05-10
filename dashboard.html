@@ -18,7 +18,7 @@
         <a class="menu-link" data-panel="products" href="#">Manage Products</a>
         <a class="menu-link" data-panel="banners" href="#">Manage Banners</a>
         <a class="menu-link" data-panel="quotes" href="#">Quote Inquiries</a>
-        <a class="menu-link" data-panel="pitch-decks" href="#">Pitch Decks</a>
+        <a class="menu-link" data-panel="pitch-decks" href="#">Quote Generator</a>
       </nav>
       <div class="menu-footer">
         <span id="admin-email"></span>
@@ -174,8 +174,82 @@
 
       <!-- PITCH DECKS PANEL -->
       <section class="panel" id="panel-pitch-decks" style="display:none;">
+
+        <!-- Quote Settings -->
         <div class="panel-header">
-          <h2>Pitch Decks</h2>
+          <h2>Quote Wizard Settings</h2>
+          <button class="btn-primary" id="settings-edit-btn">Edit Settings</button>
+        </div>
+        <p class="panel-description">Configure the questions and slider ranges shown on the Get a Quote page.</p>
+
+        <div id="settings-display" class="item-list">Loading…</div>
+
+        <div id="settings-form-wrapper" class="form-wrapper" style="display:none;">
+          <h3>Edit Quote Settings</h3>
+          <div id="settings-form-error" class="form-error" style="display:none;"></div>
+          <form id="settings-form">
+
+            <h4 style="margin-bottom:0.5rem;">Event Type Buttons</h4>
+            <p class="panel-description" style="margin-bottom:1rem;">Each row is one button on step 1. Icon is a single character (emoji or symbol).</p>
+            <div id="event-types-list"></div>
+            <button type="button" class="btn-secondary btn-sm" id="event-type-add-btn" style="margin-bottom:1.5rem;">+ Add Event Type</button>
+
+            <h4 style="margin-bottom:0.5rem;">Guest Count Slider</h4>
+            <div class="form-row form-row-four" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.75rem;margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label>Min</label>
+                <input type="number" id="guests-min" min="0" required>
+              </div>
+              <div class="form-group">
+                <label>Max</label>
+                <input type="number" id="guests-max" min="1" required>
+              </div>
+              <div class="form-group">
+                <label>Step</label>
+                <input type="number" id="guests-step" min="1" required>
+              </div>
+              <div class="form-group">
+                <label>Default</label>
+                <input type="number" id="guests-default" required>
+              </div>
+            </div>
+
+            <h4 style="margin-bottom:0.5rem;">Budget Slider</h4>
+            <div class="form-row form-row-five" style="display:grid;grid-template-columns:0.5fr 1fr 1fr 1fr 1fr;gap:0.75rem;margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label>Currency</label>
+                <input type="text" id="budget-prefix" maxlength="3" placeholder="R">
+              </div>
+              <div class="form-group">
+                <label>Min</label>
+                <input type="number" id="budget-min" min="0" required>
+              </div>
+              <div class="form-group">
+                <label>Max</label>
+                <input type="number" id="budget-max" min="1" required>
+              </div>
+              <div class="form-group">
+                <label>Step</label>
+                <input type="number" id="budget-step" min="1" required>
+              </div>
+              <div class="form-group">
+                <label>Default</label>
+                <input type="number" id="budget-default" required>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Save Settings</button>
+              <button type="button" class="btn-secondary" id="settings-cancel-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <hr style="border:none;border-top:1px solid #e5e5e5;margin:2rem 0;">
+
+        <!-- Pitch Decks -->
+        <div class="panel-header">
+          <h3>Pitch Deck PDFs</h3>
           <button class="btn-primary" id="deck-upload-btn">+ Upload Deck</button>
         </div>
         <p class="panel-description">Upload your PDF pitch decks here, then map them to questionnaire outcomes using the rules below.</p>
@@ -200,11 +274,19 @@
           </form>
         </div>
 
-        <div class="panel-header" style="margin-top: 2rem;">
-          <h3>Answer Mapping Rules</h3>
+        <hr style="border:none;border-top:1px solid #e5e5e5;margin:2rem 0;">
+
+        <!-- Mapping Rules -->
+        <div class="panel-header">
+          <h3>Answer → Deck Mapping Rules</h3>
           <button class="btn-primary" id="rule-new-btn">+ Add Rule</button>
         </div>
-        <p class="panel-description">Each rule maps a set of questionnaire answers to a pitch deck.</p>
+        <p class="panel-description">
+          Each rule maps visitor answers to a pitch deck.<br>
+          <strong>Conditions JSON examples:</strong><br>
+          <code>{"event_type": "personal", "guests": {"min": 0, "max": 50}, "budget": {"min": 0, "max": 30000}}</code><br>
+          Use exact string match for <code>event_type</code>; use <code>{"min":…,"max":…}</code> for numeric ranges.
+        </p>
         <div id="rule-list" class="item-list">Loading...</div>
 
         <div id="rule-form-wrapper" class="form-wrapper" style="display:none;">
@@ -218,11 +300,12 @@
             </div>
             <div class="form-group">
               <label>Conditions (JSON)</label>
-              <textarea id="rule-conditions" rows="6" placeholder='{"service_type": "events", "scale": "large"}'></textarea>
-              <small>Enter the questionnaire answers this rule matches as JSON.</small>
+              <textarea id="rule-conditions" rows="6"
+                placeholder='{"event_type": "personal", "guests": {"min": 0, "max": 100}, "budget": {"min": 0, "max": 50000}}'></textarea>
+              <small>All specified conditions must match. More specific rules (more conditions) win.</small>
             </div>
             <div class="form-group">
-              <label>Pitch Deck</label>
+              <label>Pitch Deck to deliver</label>
               <select id="rule-deck-id" required>
                 <option value="">Select a pitch deck...</option>
               </select>
@@ -233,6 +316,7 @@
             </div>
           </form>
         </div>
+
       </section>
 
     </main>

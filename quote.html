@@ -4,67 +4,151 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get a Quote | Hare Curated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <div>
-      <img>logo goes here</img>
+<body class="quote-page-body">
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520.png" alt="Hare Curated" class="logo-img">
+      </a>
     </div>
-    <div>
-      <nav class="navbar" id="site-nav"></nav>
+    <nav class="navbar" id="site-nav"></nav>
+    <div class="header-cta">
+      <a href="contact-us.html" class="btn btn-outline">Contact Us</a>
     </div>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <main>
-    <div class="quote-wrapper">
+  <main class="quote-main">
 
-      <!-- Progress indicator -->
-      <div id="quote-progress" class="quote-progress"></div>
+    <!-- Background image -->
+    <div class="quote-bg" style="background-image: url('https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events_bg.webp');"></div>
+    <div class="quote-overlay"></div>
 
-      <!-- Question steps — rendered dynamically -->
-      <div id="quote-steps" class="quote-steps"></div>
+    <div class="quote-wizard" id="quote-wizard">
 
-      <!-- Contact details step (always last before result) -->
-      <div id="quote-contact-step" class="quote-step" style="display:none;">
-        <h2>Almost there — where should we send your proposal?</h2>
-        <div id="quote-contact-error" class="form-error" style="display:none;"></div>
-        <form id="quote-contact-form" class="quote-contact-form">
-          <div class="form-group">
-            <label for="quote-name">Your Name</label>
-            <input id="quote-name" type="text" placeholder="Jane Smith" required>
-          </div>
-          <div class="form-group">
-            <label for="quote-email">Email Address</label>
-            <input id="quote-email" type="email" placeholder="jane@example.com" required>
-          </div>
-          <button type="submit" class="btn-primary" id="quote-submit-btn">Get My Proposal</button>
-        </form>
+      <!-- Progress bar -->
+      <div class="qw-progress" id="qw-progress">
+        <div class="qw-progress-bar" id="qw-progress-bar"></div>
       </div>
+      <p class="qw-step-label" id="qw-step-label">Step 1 of 4</p>
 
-      <!-- Result step -->
-      <div id="quote-result-step" class="quote-step" style="display:none;">
-        <h2>Your Proposal is Ready</h2>
-        <p id="quote-result-message"></p>
-        <div id="quote-pdf-viewer" class="pdf-viewer-wrapper" style="display:none;">
-          <iframe id="quote-pdf-iframe" src="" width="100%" height="600" title="Your Proposal"></iframe>
-          <a id="quote-pdf-download" href="" download class="btn-primary" target="_blank" rel="noopener">Download PDF</a>
+      <!-- STEP 1 — Event type -->
+      <div class="qw-step" id="qw-step-1">
+        <p class="qw-eyebrow">Tell us about your occasion</p>
+        <h2 class="qw-heading">What kind of event<br><em>are you planning?</em></h2>
+        <div class="qw-event-cards" id="qw-event-cards">
+          <!-- Populated from Supabase settings -->
+          <div class="qw-loading">Loading…</div>
         </div>
-        <p id="quote-no-deck-message" style="display:none;">
-          We've received your inquiry and will be in touch shortly with a tailored proposal.
-        </p>
-        <a href="index.html" class="btn-secondary">Back to Home</a>
       </div>
+
+      <!-- STEP 2 — Guest count -->
+      <div class="qw-step" id="qw-step-2" style="display:none;">
+        <p class="qw-eyebrow">Help us tailor your proposal</p>
+        <h2 class="qw-heading">How many guests<br><em>are you expecting?</em></h2>
+        <div class="qw-slider-block">
+          <div class="qw-slider-value-display">
+            <span id="qw-guests-value">50</span>
+            <span class="qw-slider-value-unit">guests</span>
+          </div>
+          <div class="qw-slider-wrap">
+            <input type="range" id="qw-guests-slider" class="qw-slider"
+              min="10" max="500" step="5" value="50">
+            <div class="qw-slider-ticks" id="qw-guests-ticks"></div>
+          </div>
+          <div class="qw-slider-labels" id="qw-guests-labels">
+            <span>Intimate</span>
+            <span>Grand</span>
+          </div>
+        </div>
+        <button class="btn btn-rose qw-next-btn" id="qw-guests-next">Continue</button>
+      </div>
+
+      <!-- STEP 3 — Budget -->
+      <div class="qw-step" id="qw-step-3" style="display:none;">
+        <p class="qw-eyebrow">Every celebration is unique</p>
+        <h2 class="qw-heading">What is your<br><em>approximate budget?</em></h2>
+        <div class="qw-slider-block">
+          <div class="qw-slider-value-display">
+            <span id="qw-budget-prefix">R</span><span id="qw-budget-value">30 000</span>
+          </div>
+          <div class="qw-slider-wrap">
+            <input type="range" id="qw-budget-slider" class="qw-slider"
+              min="5000" max="200000" step="1000" value="30000">
+            <div class="qw-slider-ticks" id="qw-budget-ticks"></div>
+          </div>
+          <div class="qw-slider-labels" id="qw-budget-labels">
+            <span>R5 000</span>
+            <span>R200 000+</span>
+          </div>
+        </div>
+        <button class="btn btn-rose qw-next-btn" id="qw-budget-next">Continue</button>
+      </div>
+
+      <!-- STEP 4 — Email -->
+      <div class="qw-step" id="qw-step-4" style="display:none;">
+        <p class="qw-eyebrow">Almost done</p>
+        <h2 class="qw-heading">Where should we send<br><em>your proposal?</em></h2>
+        <form class="qw-contact-form" id="qw-contact-form" novalidate>
+          <div class="qw-form-group">
+            <label for="qw-name">Your Name</label>
+            <input type="text" id="qw-name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+          <div class="qw-form-group">
+            <label for="qw-email">Email Address <span class="form-required">*</span></label>
+            <input type="email" id="qw-email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+          <div class="qw-form-error" id="qw-form-error" aria-live="polite"></div>
+          <button type="submit" class="btn btn-gold qw-submit-btn" id="qw-submit-btn">
+            Download My Pitch Deck
+          </button>
+        </form>
+        <p class="qw-privacy">We respect your privacy. Your details are used only to send your proposal.</p>
+      </div>
+
+      <!-- STEP 5 — Result -->
+      <div class="qw-step" id="qw-step-result" style="display:none;">
+        <div class="qw-result-icon">✦</div>
+        <p class="qw-eyebrow">Your proposal is ready</p>
+        <h2 class="qw-heading" id="qw-result-heading">Thank you!</h2>
+        <p class="qw-result-message" id="qw-result-message"></p>
+        <div class="qw-result-actions" id="qw-result-actions"></div>
+        <a href="index.html" class="qw-back-link">← Back to Home</a>
+      </div>
+
+      <!-- Back button -->
+      <button class="qw-back-btn" id="qw-back-btn" style="display:none;" aria-label="Go back">
+        ← Back
+      </button>
 
     </div>
   </main>
 
-  <footer>
-    <div class="footer-section">
-      <a href="login.html">Admin Page Login</a>
-    </div>
-  </footer>
-
+  <script type="module">
+    import { initNav } from './js/components/nav.js';
+    initNav();
+  </script>
+  <script>
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+      toggle.classList.toggle('is-open');
+    });
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
   <script type="module" src="js/pages/quote.js"></script>
 </body>
 </html>

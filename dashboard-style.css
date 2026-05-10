@@ -102,6 +102,14 @@ body {
 .page-content {
   padding: 32px;
   max-width: 900px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Event-type row grid — keep description from overflowing the card */
+.event-type-row {
+  grid-template-columns: 60px 1fr 1fr 1fr auto !important;
+  min-width: 0;
 }
 
 .panel {
@@ -215,6 +223,9 @@ body {
   border: 1px solid #e8e8e8;
   padding: 24px;
   margin-top: 24px;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
 }
 
 .form-wrapper h3 {
@@ -243,6 +254,8 @@ body {
   font-size: 14px;
   font-family: inherit;
   outline: none;
+  min-width: 0;
+  width: 100%;
   transition: border-color 0.15s;
 }
 

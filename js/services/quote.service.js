@@ -1,6 +1,30 @@
 import { supabase } from '../lib/supabase-client.js';
 
-// Fetch all pitch deck PDFs available for admin to map to questionnaire outcomes.
+// ── Quote Settings ────────────────────────────────────────────────────────────
+
+export async function getQuoteSettings() {
+  const { data, error } = await supabase
+    .from('quote_settings')
+    .select('*')
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
+}
+
+export async function upsertQuoteSettings(payload) {
+  // We always maintain exactly one settings row (id = 1).
+  const { data, error } = await supabase
+    .from('quote_settings')
+    .upsert({ id: 1, ...payload }, { onConflict: 'id' })
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}
+
+// ── Pitch Decks ───────────────────────────────────────────────────────────────
+
 export async function getPitchDecks() {
   const { data, error } = await supabase
     .from('pitch_decks')
@@ -10,11 +34,21 @@ export async function getPitchDecks() {
   return data;
 }
 
-// Resolve a set of questionnaire answers to the correct pitch deck.
+// ── Rule Matching ─────────────────────────────────────────────────────────────
+//
+// answers = { event_type: 'personal', guests: 80, budget: 25000 }
+//
+// Rule conditions format (stored as JSONB in pitch_deck_rules.conditions):
+//   {
+//     "event_type": "personal",          // exact match
+//     "guests":  { "min": 0,   "max": 100   },  // range inclusive
+//     "budget":  { "min": 0,   "max": 30000 }   // range inclusive
+//   }
+//
+// All specified conditions must match. The rule with the most matching
+// conditions wins (most specific match).
+
 export async function resolvePitchDeck(answers) {
-  // answers is an object like { service_type: 'events', scale: 'large', ... }
-  // The admin maps outcomes via the pitch_deck_rules table.
-  // We fetch all rules and find the best match (most matching conditions).
   const { data: rules, error } = await supabase
     .from('pitch_deck_rules')
     .select('*, pitch_decks(*)');
@@ -24,17 +58,25 @@ export async function resolvePitchDeck(answers) {
   let bestScore = -1;
 
   for (const rule of rules) {
-    const conditions = rule.conditions ?? {};
+    const cond = rule.conditions ?? {};
     let score = 0;
     let mismatch = false;
 
-    for (const [key, value] of Object.entries(conditions)) {
-      if (answers[key] === undefined) continue;
-      if (answers[key] === value) {
+    for (const [key, expected] of Object.entries(cond)) {
+      const actual = answers[key];
+      if (actual === undefined || actual === null) continue;
+
+      if (typeof expected === 'object' && expected !== null) {
+        // Range check
+        const inRange =
+          (expected.min === undefined || actual >= expected.min) &&
+          (expected.max === undefined || actual <= expected.max);
+        if (!inRange) { mismatch = true; break; }
         score++;
       } else {
-        mismatch = true;
-        break;
+        // Exact match
+        if (String(actual) !== String(expected)) { mismatch = true; break; }
+        score += 2; // exact matches score higher than range matches
       }
     }
 
@@ -47,7 +89,8 @@ export async function resolvePitchDeck(answers) {
   return bestMatch;
 }
 
-// Save the visitor inquiry to the database.
+// ── Inquiries ─────────────────────────────────────────────────────────────────
+
 export async function saveInquiry(payload) {
   const { data, error } = await supabase
     .from('quote_inquiries')
@@ -58,7 +101,6 @@ export async function saveInquiry(payload) {
   return data;
 }
 
-// Admin: fetch all inquiries.
 export async function getAllInquiries() {
   const { data, error } = await supabase
     .from('quote_inquiries')

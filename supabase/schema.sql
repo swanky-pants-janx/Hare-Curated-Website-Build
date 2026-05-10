@@ -120,6 +120,32 @@ create policy "admin: full access pitch_deck_rules"
   with check (auth.role() = 'authenticated');
 
 
+-- ── QUOTE SETTINGS ───────────────────────────────────────────────────────────
+-- Single-row config table for the Get a Quote wizard.
+-- id is always 1 (upserted by the admin).
+
+create table if not exists quote_settings (
+  id           int primary key default 1,
+  event_types  jsonb not null default '[]',
+  guests       jsonb not null default '{}',
+  budget       jsonb not null default '{}',
+  updated_at   timestamptz default now()
+);
+
+alter table quote_settings enable row level security;
+
+-- Public visitors may read settings (to populate the wizard).
+create policy "public: read quote settings"
+  on quote_settings for select
+  using (true);
+
+-- Only admin may write settings.
+create policy "admin: full access quote settings"
+  on quote_settings for all
+  using (auth.role() = 'authenticated')
+  with check (auth.role() = 'authenticated');
+
+
 -- ── QUOTE INQUIRIES ──────────────────────────────────────────────────────────
 
 create table if not exists quote_inquiries (
