@@ -30,27 +30,32 @@ async function loadBanner() {
 }
 
 async function loadFeaturedProducts() {
-  const grid = el('#featured-products');
+  const grid    = el('#featured-products');
+  const section = grid?.closest('.products-section');
   if (!grid) return;
 
   try {
     const products = await getVisibleProducts();
-    // Show up to 5 featured products on the homepage.
     const featured = products.slice(0, 5);
     if (!featured.length) {
-      grid.style.display = 'none';
+      if (section) section.style.display = 'none';
       return;
     }
     setHTML(grid, featured.map((p) => `
-      <a class="featured-product-card" href="/product.html?slug=${encodeURIComponent(p.slug)}">
-        ${p.cover_image_url
-          ? `<img src="${p.cover_image_url}" alt="${escapeHTML(p.name)}">`
-          : ''}
-        <div class="featured-product-info">
-          <span>${escapeHTML(p.name)}</span>
-          ${p.price_from ? `<span>From ${formatPrice(p.price_from)}</span>` : ''}
+      <article class="product-card">
+        <div class="product-card-image">
+          ${p.cover_image_url
+            ? `<img src="${p.cover_image_url}" alt="${escapeHTML(p.name)}" loading="lazy">`
+            : '<div class="product-image-placeholder"></div>'}
+          <div class="product-card-overlay">
+            <a href="/product.html?slug=${encodeURIComponent(p.slug)}" class="btn btn-gold-sm">View</a>
+          </div>
         </div>
-      </a>
+        <div class="product-card-body">
+          <h3 class="product-name">${escapeHTML(p.name)}</h3>
+          ${p.price_from ? `<p class="product-price">From ${formatPrice(p.price_from)}</p>` : ''}
+        </div>
+      </article>
     `).join(''));
   } catch (err) {
     console.error(err);
