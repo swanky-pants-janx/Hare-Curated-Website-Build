@@ -3,51 +3,372 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hare Curated | Home</title>
+  <title>Premium Bespoke Floral Designs and Event Planning | Hare Curated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- ANNOUNCEMENT BANNER -->
   <div id="site-banner" class="website-banner">
     <!-- Populated dynamically from Supabase -->
   </div>
-  <header>
-    <div>
-      <img>logo goes here</img>
-    </div>
-    <div>
-      <nav class="navbar" id="site-nav"></nav>
-    </div>
-    <div>
-      <button>Get Quote</button>
-    </div>
-  </header>
-  <main>
-    <div class="hero-section-home">
-      <h1>WHERE ARTISTRY AND DESIGN MEETS NATURE</h1>
-    </div>
-    <div class="pillar-section">
-      <div class="hero-section-container">
-        <button>EVENTS</button>
-      </div>
-      <div class="hero-section-container">
-        <button>FLORAL</button>
-      </div>
-      <div class="about-us-section">
-        <p>Short Description About Us.</p>
-        <button>Read More</button>
-      </div>
-    </div>
 
-    <!-- Featured products — populated dynamically -->
-    <section class="featured-products-section">
-      <div id="featured-products" class="featured-products-grid"></div>
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520.png" alt="Hare Curated" class="logo-img">
+      </a>
+    </div>
+    <nav class="navbar" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact-us.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="quote.html" class="btn btn-outline">Get a Quote</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-bg" style="background-image: url('/Images/pexels-mehmet-34446384.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-headline">Where Artistry and<br><em>Design Meet Nature</em></h1>
+        <div class="hero-ctas">
+          <a href="shop.html" class="btn btn-gold">Grow Your Own Garden</a>
+          <a href="contact-us.html" class="btn btn-outline-white">Plan Your Dream Event</a>
+        </div>
+      </div>
     </section>
+
+    <!-- PILLARS SECTION — EVENTS & FLORAL -->
+    <section class="pillars-section">
+      <div class="pillar pillar-events">
+        <div class="pillar-bg" style="background-image: url('https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events.png');"></div>
+        <div class="pillar-overlay"></div>
+        <div class="pillar-content">
+          <span class="pillar-label">01</span>
+          <h2 class="pillar-title">Events</h2>
+          <p class="pillar-desc">Bespoke event design and styling that transforms any occasion into an unforgettable celebration of beauty and elegance.</p>
+          <a href="contact-us.html" class="btn btn-outline-white pillar-btn">Enquire Now</a>
+        </div>
+      </div>
+      <div class="pillar pillar-floral">
+        <div class="pillar-bg" style="background-image: url('https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_floral_design.png');"></div>
+        <div class="pillar-overlay"></div>
+        <div class="pillar-content">
+          <span class="pillar-label">02</span>
+          <h2 class="pillar-title">Floral</h2>
+          <p class="pillar-desc">Hand-crafted floral arrangements grown and curated with an artist's eye — from intimate bouquets to grand installations.</p>
+          <a href="shop.html" class="btn btn-outline-white pillar-btn">Shop Blooms</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT TEASER SECTION -->
+    <section class="about-teaser">
+      <div class="about-teaser-inner">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">Crafting Beauty,<br><em>One Petal at a Time</em></h2>
+        <div class="title-divider"><span></span><span class="divider-diamond"></span><span></span></div>
+        <p class="about-teaser-body">Hare Curated is the creative vision of Erique Swart — a floral artist and event stylist who believes that every occasion deserves to be extraordinary. From intimate garden lunches to grand celebrations, we bring an artist's eye, a grower's passion, and a curator's discipline to everything we touch.</p>
+        <a href="about-us.html" class="btn btn-rose">Read More</a>
+      </div>
+    </section>
+
+    <!-- LATEST PRODUCTS SECTION -->
+    <section class="products-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Fresh Arrivals</p>
+        <h2 class="section-title">Our Floral Collections</h2>
+        <div class="title-divider"><span></span><span class="divider-diamond"></span><span></span></div>
+      </div>
+      <div class="products-grid" id="products-grid">
+        <!-- Products are loaded dynamically; static fallbacks below -->
+        <article class="product-card">
+          <div class="product-card-image">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/05/1.1-Elegance-Essentials-300x300.png" alt="Delicate Dawn" loading="lazy">
+            <div class="product-card-overlay">
+              <a href="shop.html" class="btn btn-gold-sm">View</a>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-name">Delicate Dawn</h3>
+            <p class="product-price">From R590,00</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card-image">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/05/1.2-Elegance-Essentials-300x300.png" alt="Graceful Touch" loading="lazy">
+            <div class="product-card-overlay">
+              <a href="shop.html" class="btn btn-gold-sm">View</a>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-name">Graceful Touch</h3>
+            <p class="product-price">From R790,00</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card-image">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/05/1.3-Elegance-Essentials-300x300.png" alt="Serene Splendor" loading="lazy">
+            <div class="product-card-overlay">
+              <a href="shop.html" class="btn btn-gold-sm">View</a>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-name">Serene Splendor</h3>
+            <p class="product-price">From R990,00</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card-image">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/05/2.1-Sophisticated-Selections-300x300.png" alt="Refined Harmony" loading="lazy">
+            <div class="product-card-overlay">
+              <a href="shop.html" class="btn btn-gold-sm">View</a>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-name">Refined Harmony</h3>
+            <p class="product-price">From R1,190,00</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card-image">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/05/2.2-Sophisticated-Selections-300x300.png" alt="Opulent Orchestrations" loading="lazy">
+            <div class="product-card-overlay">
+              <a href="shop.html" class="btn btn-gold-sm">View</a>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-name">Opulent Orchestrations</h3>
+            <p class="product-price">From R1,390,00</p>
+          </div>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a href="shop.html" class="btn btn-rose">Explore Full Collection</a>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM FEED SECTION -->
+    <section class="instagram-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Follow Along</p>
+        <h2 class="section-title">We are on Instagram</h2>
+        <div class="title-divider"><span></span><span class="divider-diamond"></span><span></span></div>
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="instagram-handle">@harecurated</a>
+      </div>
+      <div class="instagram-grid">
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="instagram-tile">
+          <img src="https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/609349441_18543093538031357_3028281092155085691_nlow.webp" alt="Hare Curated on Instagram" loading="lazy">
+          <div class="instagram-tile-overlay"><span>&#10084;</span></div>
+        </a>
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="instagram-tile">
+          <img src="https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/588209867_18536885962031357_9088279080497586784_nlow.webp" alt="Hare Curated on Instagram" loading="lazy">
+          <div class="instagram-tile-overlay"><span>&#10084;</span></div>
+        </a>
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="instagram-tile">
+          <img src="https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/542464064_18519820714031357_4807708424990931992_nlow.webp" alt="Hare Curated on Instagram" loading="lazy">
+          <div class="instagram-tile-overlay"><span>&#10084;</span></div>
+        </a>
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="instagram-tile instagram-tile-wide">
+          <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events.png" alt="Hare Curated Events" loading="lazy">
+          <div class="instagram-tile-overlay"><span>&#10084;</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- REVIEWS / TESTIMONIALS SECTION -->
+    <section class="reviews-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Kind Words</p>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="title-divider"><span></span><span class="divider-diamond"></span><span></span></div>
+      </div>
+      <div class="reviews-track-wrapper">
+        <div class="reviews-track" id="reviews-track">
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"Erique's flowers are nothing short of spectacular. His dahlias are some of the most vibrant and lush blooms I've ever seen... his floral arrangements are effortlessly elegant, with a refined sense of color and texture that makes every bouquet or event installation feel truly special."</blockquote>
+            <div class="review-author">
+              <strong>Luaan Hong</strong>
+              <span>Head Post Production & Workflow Producer, Mushroom Media</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"Darkness falls on the night... and the full impact of Erique's amazing event design becomes apparent. Not one sole realised that we were in the midst of winter. We were all warm and toasty in our marquee enveloped with beautiful decor, floral design and table setting."</blockquote>
+            <div class="review-author">
+              <strong>Neil Jacobsohn</strong>
+              <span>Global Futurist | Strategist | Keynote Speaker</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"You stepped in a few weeks before and assisted me in tying up loose ends. You have excellent budget-saving ideas and know where and how to create an impact. Your eye for colour and detail is phenomenal."</blockquote>
+            <div class="review-author">
+              <strong>Jane MacKensie</strong>
+              <span>Client</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"You turned our venue into something completely different. You gave us whimsical elegance within our budget. You and your team executed the days before and the actual day with precision and left us with nothing wanting."</blockquote>
+            <div class="review-author">
+              <strong>Samantha Boucher</strong>
+              <span>Client</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"We had the pleasure of using Hare Curated for our wedding day, where they really overdelivered with their incredible service and communication. We had incredible beautiful flowers for the day. We can highly recommend them for your events and special moments."</blockquote>
+            <div class="review-author">
+              <strong>Jordan Koen</strong>
+              <span>Client — Wedding</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"Erique thank you so much for a spectacular spectacle. It looked so incredible. This wedding definitely would not have been the elevated and stunningly elegant experience it was without you!!"</blockquote>
+            <div class="review-author">
+              <strong>Tamsin Andersson</strong>
+              <span>Executive Producer | Part Owner, DIPRENTE</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"Hare Curated was brought in at the last minute for our company's 50th anniversary function, and they exceeded all expectations. Despite the event being planned on short notice, Erique demonstrated remarkable creativity and the transformation of our office space was stunning."</blockquote>
+            <div class="review-author">
+              <strong>Sara Turnbull</strong>
+              <span>Senior Exploration Geologist, SRK Exploration Limited</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-body">"In less than a week at the height of event season, you pulled an intimate nuptials together for 20 guests; with stunning floral design and a tablescape and decor for our ceremony and reception. It was a resounding success!"</blockquote>
+            <div class="review-author">
+              <strong>Dashiel Solomon</strong>
+              <span>Client — Intimate Wedding</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="reviews-controls">
+          <button class="reviews-prev" id="reviews-prev" aria-label="Previous review">&#8592;</button>
+          <div class="reviews-dots" id="reviews-dots"></div>
+          <button class="reviews-next" id="reviews-next" aria-label="Next review">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
   </main>
-  <footer>
-    <div class="footer-section">
-      <a href="login.html">Admin Page Login</a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520.png" alt="Hare Curated" class="footer-logo">
+        <p class="footer-tagline">Where Artistry and Design Meet Nature</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>21 Oban Ave, Blairgowrie<br>Johannesburg</p>
+        <p><a href="tel:+27108804705">+27 10 880 4705</a></p>
+        <p><a href="tel:+27843736314">+27 84 373 6314</a></p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="social-link">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2024 Hare Curated | All Rights Reserved</p>
+      <a href="login.html" class="footer-admin-link">Admin</a>
     </div>
   </footer>
+
   <script type="module" src="js/pages/index.js"></script>
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+      toggle.classList.toggle('is-open');
+    });
+
+    // Sticky header shadow on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Reviews carousel
+    const track = document.getElementById('reviews-track');
+    const dotsContainer = document.getElementById('reviews-dots');
+    const cards = track ? track.querySelectorAll('.review-card') : [];
+    let current = 0;
+    const cardsPerView = () => window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      const total = Math.ceil(cards.length / cardsPerView());
+      for (let i = 0; i < total; i++) {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+      }
+    }
+
+    function goTo(index) {
+      const cpv = cardsPerView();
+      const total = Math.ceil(cards.length / cpv);
+      current = Math.max(0, Math.min(index, total - 1));
+      const cardWidth = track.parentElement.offsetWidth;
+      track.style.transform = `translateX(-${current * cardWidth}px)`;
+      document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    if (cards.length) {
+      buildDots();
+      document.getElementById('reviews-prev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('reviews-next').addEventListener('click', () => goTo(current + 1));
+      window.addEventListener('resize', () => { buildDots(); goTo(0); });
+    }
+  </script>
 </body>
 </html>

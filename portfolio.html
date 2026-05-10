@@ -1,30 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Hare Curated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar" id="site-nav"></nav>
-    </header>
-    <main>
-        <div class="hero-section-home">
-            <div class="hero-section-container">
-                <button>EVENTS</button>
-            </div>
-            <div class="hero-section-container">
-                <button>FLORAL</button>
-            </div>
-        </div>
-    </main>
 
+  <!-- ANNOUNCEMENT BANNER -->
+  <div id="site-banner" class="website-banner"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520.png" alt="Hare Curated" class="logo-img">
+      </a>
+    </div>
+    <nav class="navbar" id="site-nav"></nav>
+    <div class="header-cta">
+      <a href="quote.html" class="btn btn-outline">Get a Quote</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_floral_design.png');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="hero-eyebrow">Our Work</p>
+        <h1 class="page-hero-title">Portfolio</h1>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="portfolio-intro-section">
+      <div class="portfolio-intro-inner">
+        <p class="section-eyebrow">A Collection of Moments</p>
+        <h2 class="section-title">Every Event,<br><em>A Work of Art</em></h2>
+        <div class="title-divider"><span></span><span class="divider-diamond"></span><span></span></div>
+        <p class="portfolio-intro-body">From intimate gatherings to grand celebrations, each project in our portfolio reflects our commitment to artistry, elegance, and the kind of personal attention that makes moments truly unforgettable. Browse our work below.</p>
+      </div>
+    </section>
+
+    <!-- FILTER TABS -->
+    <section class="portfolio-filters-section">
+      <div class="portfolio-filters" id="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="floral">Floral Design</button>
+        <button class="filter-btn" data-filter="workshops">Workshops</button>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="portfolio-grid-section">
+      <div class="portfolio-grid" id="portfolio-grid">
+
+        <div class="portfolio-item portfolio-item-wide" data-category="events">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events.png" alt="Event styling — bespoke event design" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Events</p>
+                <h3 class="portfolio-item-title">Bespoke Event Design</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_floral_design.png" alt="Floral design styling" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Floral Styling</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/09/Cut-Flowers-Lisianthus-Super-Magic-Rose.jpg" alt="Lisianthus blooms" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Lisianthus — Super Magic Rose</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/08/Cut-Flower-Lisianthus-ABC-Yellow-1.jpeg" alt="Lisianthus — ABC Yellow" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Lisianthus — ABC Yellow</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/08/Cut-Flower-Lisianthus-ABC-White.jpg" alt="Lisianthus — ABC White" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Lisianthus — ABC White</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item portfolio-item-wide" data-category="workshops">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/11/floral-muse-moments-website-1.png" alt="Floral Muse Moments Workshop" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Workshops</p>
+                <h3 class="portfolio-item-title">Floral Muse Moments</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="workshops">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/10/463262220_1481297799056167_6577477954262800967_n.jpg" alt="Open Day at Hare Curated" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Workshops</p>
+                <h3 class="portfolio-item-title">Open Day</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_floral_subscriptions.png" alt="Floral subscriptions" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Subscription Arrangements</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="events">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_rentals.png" alt="Event rentals and table settings" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Events</p>
+                <h3 class="portfolio-item-title">Table Settings &amp; Rentals</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/609349441_18543093538031357_3028281092155085691_nlow.webp" alt="Instagram — Hare Curated blooms" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Seasonal Blooms</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/588209867_18536885962031357_9088279080497586784_nlow.webp" alt="Hare Curated arrangement" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Garden Cutting</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="portfolio-item" data-category="floral">
+          <a href="#" class="portfolio-item-link">
+            <img src="https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/542464064_18519820714031357_4807708424990931992_nlow.webp" alt="Hare Curated dahlia" loading="lazy">
+            <div class="portfolio-item-overlay">
+              <div class="portfolio-item-info">
+                <p class="portfolio-item-category">Floral Design</p>
+                <h3 class="portfolio-item-title">Dahlia Season</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="about-cta-banner">
+      <div class="about-cta-bg" style="background-image: url('https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events_bg.webp');"></div>
+      <div class="about-cta-overlay"></div>
+      <div class="about-cta-content">
+        <p class="section-eyebrow" style="color: var(--gold);">Let's Work Together</p>
+        <h2 class="about-cta-heading">Ready to Create<br><em>Your Moment?</em></h2>
+        <div class="title-divider" style="justify-content: center;"><span style="background: rgba(247,220,82,0.4)"></span><span class="divider-diamond"></span><span style="background: rgba(247,220,82,0.4)"></span></div>
+        <div class="about-cta-buttons">
+          <a href="contact-us.html" class="btn btn-gold">Get in Touch</a>
+          <a href="quote.html" class="btn btn-outline-white">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520.png" alt="Hare Curated" class="footer-logo">
+        <p class="footer-tagline">Where Artistry and Design Meet Nature</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>21 Oban Ave, Blairgowrie<br>Johannesburg</p>
+        <p><a href="tel:+27108804705">+27 10 880 4705</a></p>
+        <p><a href="tel:+27843736314">+27 84 373 6314</a></p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/harecurated" target="_blank" rel="noopener" class="social-link">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2024 Hare Curated | All Rights Reserved</p>
+      <a href="login.html" class="footer-admin-link">Admin</a>
+    </div>
+  </footer>
 
   <script type="module">
     import { initNav } from './js/components/nav.js';
     initNav();
+  </script>
+  <script>
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+      toggle.classList.toggle('is-open');
+    });
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Portfolio filter
+    const filters = document.getElementById('portfolio-filters');
+    const items   = document.querySelectorAll('.portfolio-item');
+    if (filters) {
+      filters.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        filters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(item => {
+          const show = f === 'all' || item.dataset.category === f;
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    }
   </script>
 </body>
 </html>
