@@ -1,0 +1,21 @@
+PAGE: About Us
+URL: https://harecurated.co.za/about-us/
+TITLE: About Us - Hare Curated
+============================================================
+
+HEADING: ABOUT US
+----------------
+Each of our services can operate on its own. Yet, when harnessed by combining a few or all these services they can then create impromptu weddings, events, and parties with ease, awe, and delight on the one side of the scale, and grandeur and sophistication on the other side of the scale depending on your budget, time, and requirements. We can do simple or show-stopping.
+
+We are here to assist you in the pursuit of notable events and spaces and the creation thereof that are unique and in line with your ideals. We make it easy to set the stage for any of your desires with a curated set of services as listed below on this page.
+
+We know and understand the building blocks for the right ambience. Our formula is a mixture of personal interaction and exacting attention to the details that get people involved that will have you shine long after those moments are gone.
+
+CTA: Find out more
+
+
+FOOTER
+------
+Address: 21 Oban Ave, Blairgowrie, Johannesburg
+Phone: +27 10 880 4705 / +27 84 373 6314
+Copyright: Copyright 2024 Hare Curated | All Rights Reserved

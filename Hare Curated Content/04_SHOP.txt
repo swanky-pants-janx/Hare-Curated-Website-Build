@@ -1,0 +1,29 @@
+PAGE: Shop
+URL: https://harecurated.co.za/shop/
+TITLE: Shop - Hare Curated
+============================================================
+
+SHOP CATEGORIES
+---------------
+- Build Your Own Bouquet    — Shop Now
+- Cut Flower Young Plants   — Shop Now
+- Subscriptions             — Shop Now
+- Slow Grown Seasonal Seeds — Shop Now
+- Object d'art & Vases      — Shop Now
+- Dahlia Tubers             — Shop Now
+
+
+FEATURED PRODUCTS (from Homepage)
+----------------------------------
+1. Delicate Dawn              — From R590,00
+2. Graceful Touch             — From R790,00
+3. Serene Splendor            — From R990,00
+4. Refined Harmony            — From R1,190,00
+5. Opulent Orchestrations     — From R1,390,00
+
+
+FOOTER
+------
+Address: 21 Oban Ave, Blairgowrie, Johannesburg
+Phone: +27 10 880 4705 / +27 84 373 6314
+Copyright: Copyright 2024 Hare Curated | All Rights Reserved

@@ -1,0 +1,70 @@
+PAGE: Home
+URL: https://harecurated.co.za/
+TITLE: Premium Bespoke Floral Designs and Event Planning: Elevate Your Special Occasion - Hare Curated
+============================================================
+
+HERO SECTION
+-------------
+Headline: Where Artistry and Design Meet Nature
+
+Body Copy:
+At Hare Curated, we craft stunning floral arrangements and style unforgettable events, all while sharing our passion for nurturing nature. From bespoke event design and floral masterpieces to expert tips for growing your own plants, explore the harmony of art and nature with us.
+
+CTA Button 1: Grow Your Own Garden
+CTA Button 2: Plan Your Dream Event
+
+
+LATEST PRODUCTS SECTION
+========================
+- Delicate Dawn — From R590,00
+- Graceful Touch — From R790,00
+- Serene Splendor — From R990,00
+- Refined Harmony — From R1,190,00
+- Opulent Orchestrations — From R1,390,00
+
+
+INSTAGRAM FEED SECTION
+======================
+Heading: We are on Instagram
+(Live feed showing latest @harecurated posts)
+
+
+REVIEWS SECTION
+================
+
+Review 1 — Luaan Hong, Head Post Production and Workflow Producer, Mushroom Media:
+"Erique's flowers are nothing short of spectacular. His dahlias are some of the most vibrant and lush blooms I've ever seen, each one grown with incredible care and attention to detail. The quality is undeniable—fresh, long-lasting, and full of life. Beyond just growing stunning flowers, Erique has an incredible eye for style. His floral arrangements are effortlessly elegant, with a refined sense of color and texture that makes every bouquet or event installation feel truly special. Whether for a simple arrangement or a large-scale event, his work always carries a signature touch of artistry and sophistication. If you're looking for premium blooms and an event stylist who understands beauty in every detail, Erique is the one to trust. His passion for flowers shines through in everything he creates."
+
+Review 2 — Neil Jacobsohn, Global futurist | Strategist | Facilitator | Keynote Speaker | Entrepreneur | Director | Associate Future World:
+"Darkness falls on the night...and the full impact of Erique's amazing event design becomes apparent. Again, our thanks for arranging such a magnificent 60th birthday event for my darling wife. Your suggestions for caterers and barmen were right on the mark. And then to top it off you managed all suppliers with ease, and you styled the events with breathing, inspiration for my wife and our guests. Many are still talking of that great winter night in our front garden where not one sole realised that we were in the midst of winter. We were all warm and toasty in our marque enveloped with beautiful decor, floral design and table setting and surrounded by laughter with friends and family to feast, drink, and celebrate this momentous moment. THANK YOU for making this so memorable."
+
+Review 3 — Jane MacKensie:
+"Erique, your suggestion towards my 40th birthday made my birthday memorable. Not just to me but to all of my friends, family and some of my close colleagues that I work with. You stepped in a few weeks before and you assisted me in tying up loose ends and making sure everything stayed on track at a moment when I thought it was all going to fall apart. You have excellent budget-saving ideas and know where and how to create an impact that will have my guests feeling like this was a celebration and special moment. You assisted me and styled a remarkable event. Your eye for colour and detail is phenomenal. I am so grateful to you for guiding me and then styling my 40th birthday party."
+
+Review 4 — Samantha Boucher:
+"How can we thank you for all your tireless wonder? You took our requests and ideas fleshed them out and guided us through your creative process to a place of magic. You turned our venue into something completely different. You gave us whimsical elegance within our budget. What marvels me most is how you dealt with one or two issues that could have possibly become an anti-climax to our event and with utter ease you diverted and came up with solutions on the day when the venue could not fulfil its mandate even though you were not contracted to deal with it you stepped in and made a plan for us with one of your vendors who on short notice assisted you and that speaks volumes of the relationship you have with your team and vendors. You and your team executed the days before and the actual day with precision and left us with nothing wanting. A huge thank you from me and Dave for a magical event, beautifully put together."
+
+Review 5 — Anli Jones Van Der Walt:
+"The most insane dahlias by Erique Swart of @harecurated for my better half's birthday lunch yesterday. I doubt I could capture the colours or the enormity of these beauties in a single pic, but I will try..."
+
+Review 6 — Lizanne Jacobsohn, Transformational leadership development | Executive Business Coach & Director:
+"Dearest Erique, once again we could rely on you to create another gorgeous event for our family, and for Neil's 70th birthday. Our front lawn in Melrose Estate once again was transformed into a space where friends and family came together for a luncheon with exquisite food, (as per your recommendation) via Olives and Plates, your decor, table setting, floral designs for the tables and our various space, the entertainment and of course your idea of having a bespoke gin bar from Thrust just made the luncheon and afternoon a perfect celebration. You worked with our theme, created a colour palette, and helped me finetune the menu from canapes to sit-down lunch, later a cheese board and topping it off with a birthday cake in Neil's favourite taste profile (Carrot Cake) supplied by Olives and Plates. This is your 3rd event for us (my 60th, Bianca's and Oliver's engagement party and now Neil's 70th) — Thank You, each of these has been amazing!"
+
+Review 7 — Sara Turnbull, Senior Exploration Geologist, SRK Exploration Limited:
+"Hare Curated was brought in at the last minute for our company's 50th anniversary function, and they exceeded all expectations. Despite the event being planned on short notice and with a limited budget, Erique and his team at Hare Curated were incredibly helpful and willing to assist. Erique demonstrated remarkable creativity by utilising items we already had at the venue, which helped us stay within budget while still creating a festive atmosphere for our 140 guests. The transformation of our office space into a vibrant event venue was stunning, thanks to his personal touches and unique ideas. Their professionalism and efficiency were truly impressive. Thank you again, Hare Curated, for your amazing service. We couldn't have asked for a better experience."
+
+Review 8 — Jordan Koen, Video Editor Freelance:
+"We had the pleasure of using Hare Curated for our wedding day, where they really overdelivered with their incredible service and communication. We had incredible beautiful flowers for the day, delivered to the venue and were left with clear instructions on how to keep them fresh for the entire day. We can highly recommend them for your events and special moments."
+
+Review 9 — Tamsin Andersson, Executive Producer | Part Owner | Part Founder DIPRENTE:
+"Erique thank you so much for a spectacular spectacle. It looked so incredible. What a lovely day and the weather played ball. Thank you so much — this wedding definitely would not have been the elevated and stunningly elegant experience it was without you!! Hope to see you soon..."
+
+Review 10 — Dashiel Solomon:
+"Thank you very much for jumping in when we reached out to you. In less than a week at the height of event season, you pulled an intimate nuptials together for 20 guests; with stunning floral design and a tablescape and decor for our ceremony, reception and on top of that you put in a word to one of your catering vendors 'Olive's & Plates' to come and create gastronomic wonder for our guests. I can not thank you enough. It was a resounding success! 'Obrigado por tudo.' Erique and Tamzozo's the dream team, performing secular miracles out here. Much love to you both from Mrs Solomons and me."
+
+
+FOOTER
+------
+Address: 21 Oban Ave, Blairgowrie, Johannesburg
+Phone: +27 10 880 4705 / +27 84 373 6314
+Copyright: Copyright 2024 Hare Curated | All Rights Reserved

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Quote | Hare Curated</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <img>logo goes here</img>
+    </div>
+    <div>
+      <nav class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="about-us.html">ABOUT US</a>
+        <a href="shop.html">SHOP</a>
+        <a href="blog.html">BLOG</a>
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="contact-us.html">CONTACT US</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="quote-wrapper">
+
+      <!-- Progress indicator -->
+      <div id="quote-progress" class="quote-progress"></div>
+
+      <!-- Question steps — rendered dynamically -->
+      <div id="quote-steps" class="quote-steps"></div>
+
+      <!-- Contact details step (always last before result) -->
+      <div id="quote-contact-step" class="quote-step" style="display:none;">
+        <h2>Almost there — where should we send your proposal?</h2>
+        <div id="quote-contact-error" class="form-error" style="display:none;"></div>
+        <form id="quote-contact-form" class="quote-contact-form">
+          <div class="form-group">
+            <label for="quote-name">Your Name</label>
+            <input id="quote-name" type="text" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address</label>
+            <input id="quote-email" type="email" placeholder="jane@example.com" required>
+          </div>
+          <button type="submit" class="btn-primary" id="quote-submit-btn">Get My Proposal</button>
+        </form>
+      </div>
+
+      <!-- Result step -->
+      <div id="quote-result-step" class="quote-step" style="display:none;">
+        <h2>Your Proposal is Ready</h2>
+        <p id="quote-result-message"></p>
+        <div id="quote-pdf-viewer" class="pdf-viewer-wrapper" style="display:none;">
+          <iframe id="quote-pdf-iframe" src="" width="100%" height="600" title="Your Proposal"></iframe>
+          <a id="quote-pdf-download" href="" download class="btn-primary" target="_blank" rel="noopener">Download PDF</a>
+        </div>
+        <p id="quote-no-deck-message" style="display:none;">
+          We've received your inquiry and will be in touch shortly with a tailored proposal.
+        </p>
+        <a href="index.html" class="btn-secondary">Back to Home</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-section">
+      <a href="login.html">Admin Page Login</a>
+    </div>
+  </footer>
+
+  <script type="module" src="js/pages/quote.js"></script>
+</body>
+</html>

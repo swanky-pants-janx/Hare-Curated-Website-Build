@@ -1,0 +1,36 @@
+PAGE: Contact
+URL: https://harecurated.co.za/contact/
+TITLE: Contact - Hare Curated
+============================================================
+
+HEADING: CONTACT US
+-------------------
+
+Intro Text:
+We would love to see you in person!
+
+We love our customers, but as we are also a boutique online store and grower, sometimes we need to be in more than two places at the same time, which means that we only allow visits by appointment. Please feel free to make an appointment during business hours or contact us on WhatsApp, email, our various social media or just give us a call.
+
+
+CONTACT DETAILS
+---------------
+Business Name: Hare Curated
+Address:       21 Oban Ave, Blairgowrie, Johannesburg
+Phone:         +27 010 884 0705 / +27 084 373 6314
+
+
+BUSINESS HOURS
+--------------
+Monday - Friday: 09:00 - 17:00
+
+
+CONTACT FORM
+------------
+(Contact form present on page with CAPTCHA/math verification and Submit button)
+
+
+FOOTER
+------
+Address: 21 Oban Ave, Blairgowrie, Johannesburg
+Phone: +27 10 880 4705 / +27 84 373 6314
+Copyright: Copyright 2024 Hare Curated | All Rights Reserved

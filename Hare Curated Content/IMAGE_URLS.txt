@@ -1,0 +1,176 @@
+IMAGES INVENTORY — harecurated.co.za
+Scraped: 2026-05-10
+Total: 45 images | 8 sub-folders
+============================================================
+Save images into the folder structure below.
+Each URL can be pasted into a browser or used with a download
+manager / wget / curl to download the file.
+
+To bulk-download on Mac/Linux, run:
+  while IFS= read -r url; do wget "$url"; done < urls_only.txt
+
+============================================================
+
+
+FOLDER: images/logos/
+============================================================
+01. harecurated_headerlogo520.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520.png
+
+02. harecurated_headerlogo520-480x197.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_headerlogo520-480x197.png
+
+
+FOLDER: images/backgrounds/
+============================================================
+03. harecurated_about_bg.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_about_bg.webp
+
+04. harecurated_about_bg-1280x167.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_about_bg-1280x167.webp
+
+05. harecurated_about_bg-980x128.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_about_bg-980x128.webp
+
+06. harecurated_about_bg-480x63.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_about_bg-480x63.webp
+
+07. harecurated_events_bg.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events_bg.webp
+
+08. harecurated_events_bg-1280x167.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events_bg-1280x167.webp
+
+09. harecurated_events_bg-980x128.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events_bg-980x128.webp
+
+10. harecurated_events_bg-480x63.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events_bg-480x63.webp
+
+
+FOLDER: images/services/
+============================================================
+11. harecurated_events.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events.png
+
+12. harecurated_events-1280x622.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events-1280x622.png
+
+13. harecurated_events-980x476.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events-980x476.png
+
+14. harecurated_events-480x233.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_events-480x233.png
+
+15. harecurated_rentals.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_rentals.png
+
+16. harecurated_floral_design.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_floral_design.png
+
+17. harecurated_floral_subscriptions.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_floral_subscriptions.png
+
+18. harecurated_shop_for_blooms.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_shop_for_blooms.png
+
+19. harecurated_giftboxes.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_giftboxes.png
+
+20. harecurated_vases.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_vases.png
+
+21. harecurated_objet_dart.png
+    https://harecurated.co.za/wp-content/uploads/2024/02/harecurated_objet_dart.png
+
+
+FOLDER: images/shop/
+============================================================
+22. slide_003.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/slide_003.webp
+
+23. slide_003-480x480.webp
+    https://harecurated.co.za/wp-content/uploads/2024/02/slide_003-480x480.webp
+
+24. young_plants.png
+    https://harecurated.co.za/wp-content/uploads/2024/09/young_plants.png
+
+25. young_plants-980x980.png
+    https://harecurated.co.za/wp-content/uploads/2024/09/young_plants-980x980.png
+
+26. young_plants-480x480.png
+    https://harecurated.co.za/wp-content/uploads/2024/09/young_plants-480x480.png
+
+
+FOLDER: images/products/
+============================================================
+27. 1.1-Elegance-Essentials-300x300.png
+    https://harecurated.co.za/wp-content/uploads/2024/05/1.1-Elegance-Essentials-300x300.png
+
+28. 1.2-Elegance-Essentials-300x300.png
+    https://harecurated.co.za/wp-content/uploads/2024/05/1.2-Elegance-Essentials-300x300.png
+
+29. 1.3-Elegance-Essentials-300x300.png
+    https://harecurated.co.za/wp-content/uploads/2024/05/1.3-Elegance-Essentials-300x300.png
+
+30. 1.3-Elegance-Essentials.png
+    https://harecurated.co.za/wp-content/uploads/2024/05/1.3-Elegance-Essentials.png
+
+31. 2.1-Sophisticated-Selections-300x300.png
+    https://harecurated.co.za/wp-content/uploads/2024/05/2.1-Sophisticated-Selections-300x300.png
+
+32. 2.2-Sophisticated-Selections-300x300.png
+    https://harecurated.co.za/wp-content/uploads/2024/05/2.2-Sophisticated-Selections-300x300.png
+
+
+FOLDER: images/events-workshops/
+============================================================
+33. open-day-event.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/10/463262220_1481297799056167_6577477954262800967_n.jpg
+
+34. open-day-event-980x980.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/10/463262220_1481297799056167_6577477954262800967_n-980x980.jpg
+
+35. open-day-event-480x480.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/10/463262220_1481297799056167_6577477954262800967_n-480x480.jpg
+
+36. floral-muse-moments-website-1.png
+    https://harecurated.co.za/wp-content/uploads/2024/11/floral-muse-moments-website-1.png
+
+
+FOLDER: images/blog/
+============================================================
+37. Cut-Flowers-Lisianthus-Super-Magic-Rose.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/09/Cut-Flowers-Lisianthus-Super-Magic-Rose.jpg
+
+38. Cut-Flowers-Lisianthus-Super-Magic-Rose-400x250.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/09/Cut-Flowers-Lisianthus-Super-Magic-Rose-400x250.jpg
+
+39. Cut-Flower-Lisianthus-ABC-Yellow-1.jpeg
+    https://harecurated.co.za/wp-content/uploads/2024/08/Cut-Flower-Lisianthus-ABC-Yellow-1.jpeg
+
+40. Cut-Flower-Lisianthus-ABC-Yellow-1-400x250.jpeg
+    https://harecurated.co.za/wp-content/uploads/2024/08/Cut-Flower-Lisianthus-ABC-Yellow-1-400x250.jpeg
+
+41. Cut-Flower-Lisianthus-ABC-White.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/08/Cut-Flower-Lisianthus-ABC-White.jpg
+
+42. Cut-Flower-Lisianthus-ABC-White-400x250.jpg
+    https://harecurated.co.za/wp-content/uploads/2024/08/Cut-Flower-Lisianthus-ABC-White-400x250.jpg
+
+
+FOLDER: images/instagram/
+============================================================
+43. instagram-feed-01.webp
+    https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/609349441_18543093538031357_3028281092155085691_nlow.webp
+
+44. instagram-feed-02.webp
+    https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/588209867_18536885962031357_9088279080497586784_nlow.webp
+
+45. instagram-feed-03.webp
+    https://harecurated.co.za/wp-content/uploads/sb-instagram-feed-images/542464064_18519820714031357_4807708424990931992_nlow.webp
+
+============================================================
+END OF IMAGE INVENTORY
+Total: 45 images | 8 sub-folders
+============================================================

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hare Curated | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="site-banner" class="website-banner">
+    <!-- Populated dynamically from Supabase -->
+  </div>
+  <header>
+    <div>
+      <img>logo goes here</img>
+    </div>
+    <div>
+      <nav class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="about-us.html">ABOUT US</a>
+        <a href="shop.html">SHOP</a>
+        <a href="blog.html">BLOG</a>
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="contact-us.html">CONTACT US</a>
+      </nav>
+    </div>
+    <div>
+      <button>Get Quote</button>
+    </div>
+  </header>
+  <main>
+    <div class="hero-section-home">
+      <h1>WHERE ARTISTRY AND DESIGN MEETS NATURE</h1>
+    </div>
+    <div class="pillar-section">
+      <div class="hero-section-container">
+        <button>EVENTS</button>
+      </div>
+      <div class="hero-section-container">
+        <button>FLORAL</button>
+      </div>
+      <div class="about-us-section">
+        <p>Short Description About Us.</p>
+        <button>Read More</button>
+      </div>
+    </div>
+
+    <!-- Featured products — populated dynamically -->
+    <section class="featured-products-section">
+      <div id="featured-products" class="featured-products-grid"></div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-section">
+      <a href="login.html">Admin Page Login</a>
+    </div>
+  </footer>
+  <script type="module" src="js/pages/index.js"></script>
+</body>
+</html>
