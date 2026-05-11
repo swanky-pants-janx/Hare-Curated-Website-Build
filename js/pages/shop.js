@@ -1,6 +1,6 @@
 import { getVisibleProducts, getProductCategories } from '../services/product.service.js';
 import { initNav } from '../components/nav.js';
-import { el, setHTML } from '../utils/dom.js';
+import { el, setHTML, initFilterPill } from '../utils/dom.js';
 import { formatPrice, formatDate } from '../utils/format.js';
 import { escapeHTML } from '../utils/sanitize.js';
 
@@ -79,6 +79,8 @@ async function init() {
         allBtn.insertAdjacentHTML('afterend', catButtons);
       }
     } catch (_) {}
+
+    initFilterPill(filtersContainer);
 
     filtersContainer.addEventListener('click', (e) => {
       const btn = e.target.closest('.filter-btn');

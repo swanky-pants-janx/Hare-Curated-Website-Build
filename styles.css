@@ -128,10 +128,43 @@ ul { list-style: none; }
   background: var(--white);
 }
 
-.header-logo .logo-img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  text-decoration: none;
+  gap: 2px;
+}
+
+.site-logo-name {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  transition: color 0.4s var(--ease);
+  white-space: nowrap;
+}
+
+.site-logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  transition: color 0.4s var(--ease);
+  white-space: nowrap;
+}
+
+/* Once scrolled, name switches to dark */
+.site-header.scrolled .site-logo-name {
+  color: var(--text-dark);
+}
+
+.site-logo:hover .site-logo-name {
+  color: var(--rose);
 }
 
 .navbar {
@@ -885,12 +918,32 @@ ul { list-style: none; }
   align-items: start;
 }
 
-.footer-logo {
-  height: 44px;
-  width: auto;
-  filter: brightness(0) invert(1);
+.footer-logo-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
   margin-bottom: 1rem;
-  opacity: 0.9;
+  text-decoration: none;
+}
+
+.footer-logo-name {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  line-height: 1;
+}
+
+.footer-logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.46rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1;
 }
 
 .footer-tagline {
@@ -1347,16 +1400,33 @@ ul { list-style: none; }
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
+  background: rgba(248, 245, 242, 0.55);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(44, 36, 32, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
+.shop-filters::-webkit-scrollbar { display: none; }
+
 .filter-btn {
+  position: relative;
+  z-index: 1;
   background: none;
-  border: 1px solid rgba(74, 63, 56, 0.25);
-  border-radius: var(--radius-pill);
-  padding: 0.45rem 1.25rem;
+  border: none;
+  border-radius: 50px;
+  padding: 0.55rem 1.35rem;
   font-family: var(--font-body);
   font-size: 0.68rem;
   font-weight: 600;
@@ -1364,15 +1434,26 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--text-mid);
   cursor: pointer;
-  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+  transition: color 0.25s ease;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
+.filter-btn:hover { color: var(--rose); }
+.filter-btn.active { color: var(--white); }
+
+/* Sliding pill — shared by shop & portfolio filter containers */
+.tab-pill {
+  position: absolute;
+  top: 0;
+  height: 100%;
   background: var(--rose);
-  color: var(--white);
-  border-color: var(--rose);
+  border-radius: 50px;
+  pointer-events: none;
+  transition: left 0.32s cubic-bezier(0.4, 0, 0.2, 1), width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
 }
+
+.tab-pill.no-transition { transition: none; }
 
 /* Product grid */
 .shop-grid-section {
@@ -1790,10 +1871,25 @@ ul { list-style: none; }
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
+  background: rgba(248, 245, 242, 0.55);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(44, 36, 32, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+
+.portfolio-filters::-webkit-scrollbar { display: none; }
 
 .portfolio-grid-section {
   padding: var(--section-gap) var(--gutter);

@@ -41,3 +41,32 @@ export function clearError(containerId) {
     container.style.display = 'none';
   }
 }
+
+export function initFilterPill(container) {
+  if (!container) return;
+  let pill = container.querySelector('.tab-pill');
+  if (!pill) {
+    pill = document.createElement('span');
+    pill.className = 'tab-pill';
+    container.insertBefore(pill, container.firstChild);
+  }
+
+  function placePill(btn, animate) {
+    if (!animate) pill.classList.add('no-transition');
+    pill.style.left  = btn.offsetLeft + 'px';
+    pill.style.width = btn.offsetWidth + 'px';
+    if (!animate) {
+      pill.getBoundingClientRect();
+      pill.classList.remove('no-transition');
+    }
+  }
+
+  const activeBtn = container.querySelector('.filter-btn.active');
+  if (activeBtn) placePill(activeBtn, false);
+
+  container.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    placePill(btn, true);
+  });
+}
