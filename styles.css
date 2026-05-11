@@ -93,7 +93,8 @@ ul { list-style: none; }
   transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
 }
 
-.site-header.scrolled {
+.site-header.scrolled,
+body.no-hero .site-header {
   background: rgba(250, 248, 245, 0.55);
   backdrop-filter: blur(24px) saturate(1.6);
   -webkit-backdrop-filter: blur(24px) saturate(1.6);
@@ -126,6 +127,31 @@ ul { list-style: none; }
 /* Hamburger lines — white when transparent */
 .site-header:not(.scrolled) .mobile-menu-toggle span {
   background: var(--white);
+}
+
+/* no-hero pages: nav links and CTA always use dark/rose colours */
+body.no-hero .site-header .navbar a {
+  color: var(--text-mid);
+}
+body.no-hero .site-header .navbar a:hover {
+  color: var(--rose);
+}
+body.no-hero .site-header .navbar a::after {
+  background: var(--rose);
+}
+body.no-hero .site-header .header-cta .btn-outline {
+  color: var(--rose);
+  border-color: var(--rose);
+}
+body.no-hero .site-header .header-cta .btn-outline:hover {
+  background: var(--rose);
+  color: var(--white);
+}
+body.no-hero .site-header .mobile-menu-toggle span {
+  background: var(--text-dark);
+}
+body.no-hero .site-header .site-logo-name {
+  color: var(--text-dark);
 }
 
 .site-logo {
@@ -296,6 +322,28 @@ ul { list-style: none; }
 /* --- NAV DROPDOWN ------------------------------------------ */
 .nav-dropdown {
   position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-dropdown-chevron {
+  display: none; /* shown only on mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-mid);
+  transition: transform var(--transition), color var(--transition);
+  line-height: 0;
+}
+
+.nav-dropdown.is-open .nav-dropdown-chevron {
+  transform: rotate(180deg);
+  color: var(--rose);
 }
 
 .nav-dropdown > a {
@@ -2221,18 +2269,58 @@ ul { list-style: none; }
     grid-column: span 2;
   }
 
+  .nav-dropdown-chevron {
+    display: flex;
+  }
+
+  /* On mobile the trigger row needs space-between so chevron sits right */
+  .nav-dropdown-trigger {
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .nav-dropdown-menu {
     position: static;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
     transform: none;
     box-shadow: none;
     border: none;
-    border-top: 1px solid var(--warm-grey);
-    background: var(--off-white);
-    padding: 0.25rem 0 0.5rem 1rem;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    margin-top: 0;
     min-width: 0;
+    /* Hidden by default on mobile — toggled open by .is-open */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s var(--ease), opacity 0.25s var(--ease), visibility 0.25s var(--ease);
+  }
+
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    max-height: 400px;
+    opacity: 1;
+    visibility: visible;
+    border-top: 1px solid var(--warm-grey);
+    margin-top: 0.5rem;
+    padding: 0.5rem 0 0.25rem 1rem;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 0.45rem 0;
+    font-size: 0.68rem;
+    background: transparent;
+  }
+
+  .nav-dropdown-menu a:hover {
+    background: transparent;
+    padding-left: 0.5rem;
+  }
+
+  .nav-dropdown-menu a:first-child {
+    border-bottom: 1px solid var(--warm-grey);
+    padding-bottom: 0.45rem;
+    margin-bottom: 0.1rem;
   }
 
   .nav-dropdown > a::before { display: none; }

@@ -41,7 +41,14 @@ export async function initNav() {
 
   const shopDropdown = categories.length
     ? `<div class="nav-dropdown">
-        ${link('shop.html', 'SHOP')}
+        <div class="nav-dropdown-trigger">
+          ${link('shop.html', 'SHOP')}
+          <button class="nav-dropdown-chevron" aria-label="Toggle shop menu" aria-expanded="false">
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
         <div class="nav-dropdown-menu">
           <a href="shop.html">All Products</a>
           ${categories.map((cat) =>
@@ -59,4 +66,16 @@ export async function initNav() {
     ${link('portfolio.html', 'PORTFOLIO')}
     ${link('contact-us.html', 'CONTACT US')}
   `;
+
+  // Mobile tap-to-toggle for the shop dropdown
+  const chevronBtn = nav.querySelector('.nav-dropdown-chevron');
+  if (chevronBtn) {
+    chevronBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const dropdown = chevronBtn.closest('.nav-dropdown');
+      const isOpen = dropdown.classList.toggle('is-open');
+      chevronBtn.setAttribute('aria-expanded', isOpen);
+    });
+  }
 }
